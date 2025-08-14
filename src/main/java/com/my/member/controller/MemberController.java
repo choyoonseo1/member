@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import com.my.member.service.MemberService;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
@@ -40,6 +41,12 @@ public class MemberController {
         // 서비스에서 DTO를 엔티티로 바꾼다.
         // 리포지토리를 이용해 저장한다.
         // 메인리스트 화면으로 돌아간다.
+        return "redirect:/list";
+    }
+
+    @PostMapping("/member/delete/{id}")
+    public String deleteMember(@PathVariable("id")Long id){
+        service.deleteMember(id);
         return "redirect:/list";
     }
 }
