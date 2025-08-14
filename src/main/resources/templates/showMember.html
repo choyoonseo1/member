@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
   <title th:text="${title}">Title</title>
@@ -19,7 +19,7 @@
     </thead>
     <tbody>
     <tr th:each="member : ${list}" th:object="${member}">
-      <td th:text="*${id}">1</td>
+      <td th:text="${id}">1</td>
       <td th:text="${name}">홍길동</td>
       <td th:text="${age}">90</td>
       <td th:text="${address}">제주도</td>
@@ -37,7 +37,7 @@
     </tbody>
   </table>
 <br>
-    <form>
+    <form th:action="@{/member/insertForm}"  method="get ">
       <input type="submit" value="신규멤버입력">
     </form>
 </body>
