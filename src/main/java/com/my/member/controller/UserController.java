@@ -92,4 +92,9 @@ public class UserController {
         //세션삭제메서드
         return "main";
     }
+    @GetMapping("myInfo")
+    public String myInfo(HttpSession session){
+       String myEmail = session.getAttribute("loginEmail").toString();
+        return null;
+    }
 }
