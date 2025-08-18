@@ -8,7 +8,6 @@ import lombok.Data;
 public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column()
     private Long id;
     @Column(length = 50, nullable = false)
     private String name;
